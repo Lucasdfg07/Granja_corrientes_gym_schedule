@@ -1,0 +1,9 @@
+# Read about fixtures at https://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  interval: 2021-04-24 23:01:48
+  name: MyString
+
+two:
+  interval: 2021-04-24 23:01:48
+  name: MyString

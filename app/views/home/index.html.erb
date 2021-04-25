@@ -1,0 +1,26 @@
+<div class="calendar_card mt-4 text-center p-2">
+    <div class="mb-3 pb-3 border-bottom">
+      <h3>Reserva de Horário na Academia</h3>
+    </div>
+
+  <div class="row">
+    <div class="col-md-8 calendar_scroll">
+      <%= month_calendar do |date| %>
+        <%= date %>
+
+        <% @bookings.each do |booking| %>
+          <% if booking.interval.to_date == date.to_date %>
+            <div class="booking_div mt-2 pb-2 border-bottom mb-2">
+              <%= booking.name %> <br /> 
+              <b><%= booking.interval.strftime("%H:%M") %> - <%= (booking.interval + 1.hour).strftime("%H:%M") %></b>
+            </div>
+          <% end %>
+        <% end %>
+      <% end %>
+    </div>
+
+    <div class="col-md-4 pt-4 pb-4">
+        <%= render "bookings/form", booking: @booking %>
+    </div>
+  </div>
+</div>
