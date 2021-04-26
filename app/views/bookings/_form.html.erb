@@ -1,6 +1,4 @@
 <div class="text-center">
-  <h3>Realizar reseva</h3>
-
   <%= form_with(model: booking) do |form| %>
     <% if booking.errors.any? %>
       <div id="error_explanation">
@@ -19,10 +17,20 @@
     </div>
 
     <div class="field mt-2">
-      <%= form.label "Data e Horário" %> <br />
+      <b><%= form.label "Data e Horário" %></b> <br />
       
-      <div class="booking_div">
-        <%= form.datetime_field :interval, class: 'form-control', required: true %>
+      <div style="overflow:hidden;">
+        <%= form.text_field :interval, class: 'form-control d-none', id:"datetimepicker13", required: true %>
+        
+        <script type="text/javascript">
+            $(function () {
+                $('#datetimepicker13').datetimepicker({
+                    inline: true,
+                    sideBySide: true,
+                    locale: 'pt-BR'
+                });
+            });
+        </script>
       </div>
 
       <small>(Toda reserva será validada como uma reserva de <b>1 hora</b>)</small>
