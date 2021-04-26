@@ -87,8 +87,6 @@ GEM
     erubi (1.10.0)
     execjs (2.7.0)
     ffi (1.15.0)
-    flatpickr_rails (1.1.0)
-      railties (>= 3.0)
     globalid (0.4.2)
       activesupport (>= 4.2.0)
     i18n (1.8.10)
@@ -223,7 +221,6 @@ DEPENDENCIES
   bootstrap (~> 5.0.0.beta2)
   byebug
   capybara (>= 3.26)
-  flatpickr_rails
   jbuilder (~> 2.7)
   jquery-rails
   listen (~> 3.3)
