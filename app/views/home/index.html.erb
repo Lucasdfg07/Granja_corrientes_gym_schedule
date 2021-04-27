@@ -25,9 +25,22 @@
           <div class="booking_div mt-2 pb-2 border-bottom mb-2">
             <%= booking.name %> <br /> 
             <b><%= booking.interval.strftime("%H:%M") %> - <%= (booking.interval + 1.hour).strftime("%H:%M") %></b>
+
+            <% if params[:cancel].present? %>
+              <%= link_to booking, method: :delete, data: { confirm: 'Tem certeza?' } do %>
+                <i class="fa fa-times"></i>
+              <% end %>
+            <% end %>
           </div>
         <% end %>
       <% end %>
     <% end %>
+  </div>
+
+  <hr />
+
+  <div class="p-2">
+    <%= link_to 'Quero desmarcar minha reserva', root_path(cancel: true) %> <br />
+    <small>(Clique no <i class="fa fa-times"></i> ao lado da reserva para desmarcar a reserva, após clicar no link acima.)</small>
   </div>
 </div>
